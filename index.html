@@ -20,11 +20,18 @@
     </style>
 </head>
 <body>
-    <button onclick="redirectToPlaySound()">Click Me!</button>
+    <button onclick="sendCommand()">Click Me!</button>
 
     <script>
-        function redirectToPlaySound() {
-            window.location.href = 'http://192.168.68.111/play_sound';
+        function sendCommand() {
+            var xhr = new XMLHttpRequest();
+            xhr.open("GET", "http://192.168.68.111/play_sound", true);
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    alert('GET WEEZERED LOLOLOLOLOL');
+                }
+            };
+            xhr.send();
         }
     </script>
 </body>
