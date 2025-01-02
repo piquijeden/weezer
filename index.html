@@ -13,8 +13,8 @@
             background-color: #f0f0f0;
         }
         button {
-            padding: 30px 60px;
-            font-size: 48px;
+            padding: 10px 20px;
+            font-size: 16px;
             cursor: pointer;
         }
     </style>
@@ -25,7 +25,7 @@
     <script>
         function sendCommand() {
             var xhr = new XMLHttpRequest();
-            xhr.open("GET", "http://192.168.4.2/play_sound", true);
+            xhr.open("GET", "http://piqui.tplinkdns.com:80/play_sound", true);
             xhr.onreadystatechange = function () {
                 if (xhr.readyState == 4 && xhr.status == 200) {
                     alert('GET WEEZERED LOLOLOLOLOL');
