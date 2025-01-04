@@ -3,36 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ESP8266 Image and Sound</title>
+    <title>Fullscreen Image with Sound</title>
     <style>
-        body {
+        body, html {
+            height: 100%;
+            margin: 0;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            background-color: #f0f0f0;
-        }
-        button {
-            padding: 10px 20px;
-            font-size: 16px;
-            cursor: pointer;
+            background: url('your-image.jpg') no-repeat center center fixed;
+            background-size: cover;
         }
     </style>
 </head>
 <body>
-    <button onclick="sendCommand()">Show Image and Play Sound</button>
-
-    <script>
-        function sendCommand() {
-            var xhr = new XMLHttpRequest();
-            xhr.open("GET", "http://192.168.68.111/play_sound", true);
-            xhr.onreadystatechange = function () {
-                if (xhr.readyState == 4 && xhr.status == 200) {
-                    alert('Image displayed and sound played');
-                }
-            };
-            xhr.send();
-        }
-    </script>
+    <audio autoplay>
+        <source src="your-sound.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
 </body>
 </html>
