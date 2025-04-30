@@ -1,76 +1,59 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ciekawy Quiz dla skibidi ludzi</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Moja Strona</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+    }
+
+    nav {
+      background-color: #333;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: left;
+      align-items: center;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-right: 20px;
+      font-size: 20px;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #ffd700;
+    }
+
+    .center-text {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 90vh;
+      font-size: 48px;
+      font-weight: bold;
+      text-align: center;
+    }
+  </style>
 </head>
 <body>
-    <h1>Ciekawy Quiz dla skibidi ludzi</h1>
-    <form id="quizForm">
-        <ol>
-            <li>
-                <p>Jak sie nazywa ten ziomuś</p>
-                <img src="Bilo.png" alt="Bilo"><br>
-                <input type="radio" name="q1" value="A"> A) Medard<br>
-                <input type="radio" name="q1" value="B"> B) Bilo<br>
-                <input type="radio" name="q1" value="C"> C) Milo<br>
-            </li>
-            <li>
-                <p>Czy N tak naprawde jest czarny</p>
-                <img src="Plush_N.png" alt="N"><br>
-                <input type="radio" name="q2" value="A"> A) Tak<br>
-                <input type="radio" name="q2" value="B"> B) Nie<br>
-                <input type="radio" name="q2" value="C"> C) Ma tylko czarne jaja<br>
-            </li>
-            <li>
-                <p>Rozwiąż zadanie matematyczne</p>
-                <img src="Zrzut ekranu 2025-03-09 174637.png" alt="Matek"><br>
-                <input type="radio" name="q3" value="A"> A) 3274893274893279<br>
-                <input type="radio" name="q3" value="B"> B) Co robią literki w matematyce<br>
-                <input type="radio" name="q3" value="C"> C) Uhhhhh<br>
-            </li>
-            <li>
-                <p>Kto zrobil ten quiz</p>
-                <img src="idk.png" alt="ja"><br>
-                <input type="radio" name="q4" value="A"> A) Janek<br>
-                <input type="radio" name="q4" value="B"> B) Janusz<br>
-                <input type="radio" name="q4" value="C"> C) Jonasz<br>
-            </li>
-            <li>
-                <p>Wiecej niz jedno zwierze to</p>
-                <img src="pugjdbfghuj.png" alt="zgadnij"><br>
-                <input type="radio" name="q5" value="A"> A) Owca<br>
-                <input type="radio" name="q5" value="B"> B) Stado<br>
-                <input type="radio" name="q5" value="C"> C) Lama<br>
-            </li>
-        </ol>
-        <button type="button" onclick="checkAnswers()">Sprawdź</button>
-    </form>
 
-    <p id="result"></p>
+  <nav>
+    <a href="#home" title="Strona Główna"><i class="fas fa-home"></i></a>
+    <a href="#info" title="Informacje"><i class="fas fa-info-circle"></i></a>
+    <a href="#kontakt" title="Kontakt"><i class="fas fa-envelope"></i></a>
+  </nav>
 
-    <script>
-        function checkAnswers() {
-            const answers = {
-                q1: "B",
-                q2: "C",
-                q3: "B",
-                q4: "A",
-                q5: "C"
-            };
+  <div class="center-text">
+    Witaj na mojej stronie!
+  </div>
 
-            let score = 0;
-
-            for (const question in answers) {
-                const userAnswer = document.querySelector(`input[name="${question}"]:checked`);
-                if (userAnswer && userAnswer.value === answers[question]) {
-                    score++;
-                }
-            }
-
-            document.getElementById("result").textContent = `Twój wynik to ${score} z ${Object.keys(answers).length}.`;
-        }
-    </script>
 </body>
 </html>
