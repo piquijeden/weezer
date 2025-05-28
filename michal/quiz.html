@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Michal Quiz</title>
+</head>
+<body>
+    <h1>Quiz o michale</h1>
+    <form id="quizForm">
+        <ol>
+            <li>
+                <p>Jakie ma zaimki michal?</p>
+                <input type="radio" name="q1" value="A"> A) On/Jego<br>
+                <input type="radio" name="q1" value="B"> B) Ona/Jej<br>
+                <input type="radio" name="q1" value="C"> C) Shadow/Milk<br>
+            </li>
+            <li>
+                <p>Jaką ocene dostal michal z pierwiastkow i potęg</p>
+                <input type="radio" name="q2" value="A"> A) 6<br>
+                <input type="radio" name="q2" value="B"> B) 2<br>
+                <input type="radio" name="q2" value="C"> C) 5<br>
+            </li>
+            <li>
+                <p>Czy michal jest czarny</p>
+                <input type="radio" name="q3" value="A"> A) nie<br>
+                <input type="radio" name="q3" value="B"> B) tak<br>
+                <input type="radio" name="q3" value="C"> C) idk<br>
+            </li>
+            <li>
+                <p>Kto z chłopakow wedlug michala jest normalny</p>
+                <input type="radio" name="q4" value="A"> A) Stachu<br>
+                <input type="radio" name="q4" value="B"> B) Czarek<br>
+                <input type="radio" name="q4" value="C"> C) Oby dwa<br>
+            </li>
+            <li>
+                <p>Ile chromosomow ma michal</p>
+                <input type="radio" name="q5" value="A"> A) Nie wiem<br>
+                <input type="radio" name="q5" value="B"> B) 3<br>
+                <input type="radio" name="q5" value="C"> C) 50<br>
+            </li>
+        </ol>
+        <button type="button" onclick="checkAnswers()">Sprawdz</button>
+    </form>
+
+    <p id="result"></p>
+    <br><br><h3><a href="https://piq.lol/michal">
+    <img src="roblox.jpg"</a>
+    <script>
+        function checkAnswers() {
+            const answers = {
+                q1: "C",
+                q2: "B",
+                q3: "A",
+                q4: "C",
+                q5: "A"
+            };
+
+            let score = 0;
+
+            for (const question in answers) {
+                const userAnswer = document.querySelector(`input[name="${question}"]:checked`);
+                if (userAnswer && userAnswer.value === answers[question]) {
+                    score++;
+                }
+            }
+
+            document.getElementById("result").textContent = `Your score is ${score} out of ${Object.keys(answers).length}.`;
+        }
+    </script>
+</body>
+</html>
